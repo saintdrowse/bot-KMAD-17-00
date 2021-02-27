@@ -27,6 +27,22 @@ def help(update, context):
 
 def kafedra(update, context):
     update.callback_query.message.reply_text('Прекрасная кафедра')
+    
+    
+def teachers(update, context):
+    update.callback_query.message.reply_text('...')
+
+def education(update, context):
+    update.callback_query.message.reply_text('...')
+
+def history(update, context):
+    update.callback_query.message.reply_text('...')
+
+def classrooms(update, context):
+    update.callback_query.message.reply_text('...')
+
+def graduates(update, context):
+    update.callback_query.message.reply_text('...')
 
 
 def error(update, context):
@@ -42,6 +58,13 @@ def main():
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("help", help))
     dp.add_handler(CallbackQueryHandler(kafedra, pattern = "kafedra"))
+    
+    dp.add_handler(CallbackQueryHandler(teachers, pattern = 'teachers'))
+    dp.add_handler(CallbackQueryHandler(education, pattern = 'education'))
+    dp.add_handler(CallbackQueryHandler(history, pattern = 'history'))
+    dp.add_handler(CallbackQueryHandler(classrooms, pattern = 'classrooms'))
+    dp.add_handler(CallbackQueryHandler(graduates, pattern = 'graduates'))
+
 
     dp.add_error_handler(error)
 
